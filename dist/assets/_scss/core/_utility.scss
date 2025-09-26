@@ -1,0 +1,577 @@
+@use '_global' as g;
+
+.u-overflow-hidden {
+  overflow: hidden;
+}
+@include g.sp {
+  .s\:u-overflow-hidden {
+    overflow: hidden;
+  }
+}
+
+// position
+.u-absolute {
+  position: absolute;
+}
+.u-static {
+  position: static;
+}
+.u-relative {
+  position: relative;
+}
+.u-fixed {
+  position: fixed;
+}
+@include g.sp {
+  .s\:u-absolute {
+    position: absolute;
+  }
+  .s\:u-static {
+    position: static;
+  }
+  .s\:u-relative {
+    position: relative;
+  }
+}
+
+// background
+.u-bg {
+  &-black {
+    background-color: var(--black)!important;
+  }
+  &-white {
+    background-color: var(--white)!important;
+  }
+  &-red {
+    background-color: var(--red)!important;
+  }
+}
+
+.u-cursor {
+  &-default {
+    cursor: default;
+  }
+  &-pointer {
+    cursor: pointer;
+  }
+}
+
+.u-noevent {
+  pointer-events: none;
+}
+
+// flexbox
+.u-flex {
+  display: flex;
+  &-space-between {
+    justify-content: space-between;
+  }
+  &-reverse {
+    flex-direction: row-reverse;
+  }
+  &-column-reverse {
+    flex-direction: column-reverse;
+  }
+  &-center {
+    justify-content: center;
+  }
+  &-middle {
+    align-items: center;
+  }
+  &-right {
+    justify-content: end;
+  }
+  &-left {
+    justify-content: start;
+  }
+  &-start {
+    align-items: start;
+  }
+  &-end {
+    align-items: end;
+  }
+  &-wrap {
+    flex-wrap: wrap;
+  }
+  &-unset {
+    flex: unset!important;
+  }
+  &-1 {
+    flex: 1!important;
+  }
+  &-column {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.u-order {
+  &-1 {
+    order: 1;
+  }
+  &-2 {
+    order: 2;
+  }
+  &-3 {
+    order: 3;
+  }
+  &-4 {
+    order: 4;
+  }
+}
+@include g.sp {
+  .s\:u-flex {
+    display: flex;
+    &-column {
+      display: flex;
+      flex-direction: column;
+    }
+    &-column-reverse {
+      flex-direction: column-reverse;
+    }
+    &-space-between {
+      justify-content: space-between;
+    }
+    &-reverse {
+      flex-direction: row-reverse;
+    }
+    &-center {
+      justify-content: center;
+    }
+    &-left {
+      justify-content: start;
+    }
+    &-middle {
+      align-items: center;
+    }
+    &-end {
+      align-items: flex-end;
+    }
+    &-wrap {
+      flex-wrap: wrap;
+    }
+    &-nowrap {
+      flex-wrap: nowrap;
+    }
+    &-order {
+      &-1 {
+        order: 1;
+      }
+      &-2 {
+        order: 2;
+      }
+      &-3 {
+        order: 3;
+      }
+    }
+  }
+}
+
+@include g.gen-style-loop(".u-gap", "gap", 0, 80, 5);
+@include g.sp {
+  @include g.gen-style-loop(".s\\:u-gap", "gap", 0, 50, 5, 'sp');
+}
+
+.u-grid {
+  display: grid;
+}
+// text-align
+.u-align {
+  &-center {
+    text-align: center;
+  }
+  &-right {
+    text-align: right;
+  }
+  &-left {
+    text-align: left;
+  }
+}
+@include g.sp {
+  .s\:u-align {
+    &-center {
+      text-align: center;
+    }
+    &-right {
+      text-align: right;
+    }
+    &-left {
+      text-align: left;
+    }
+  } 
+}
+
+// line-height
+.u-lh {
+  &-10 {
+    line-height: 1;
+  }
+  &-12 {
+    line-height: 1.2;
+  }
+  &-14 {
+    line-height: 1.4;
+  }
+  &-17 {
+    line-height: 1.7;
+  }
+  &-20 {
+    line-height: 2;
+  }
+  &-25 {
+    line-height: 2.5;
+  }
+}
+@include g.sp {
+  .s\:u-lh {
+    &-10 {
+      line-height: 1;
+    }
+    &-13 {
+      line-height: 1.3;
+    }
+    &-14 {
+      line-height: 1.4;
+    }
+    &-17 {
+      line-height: 1.7;
+    }
+    &-18 {
+      line-height: 1.8;
+    }
+    &-20 {
+      line-height: 2;
+    } 
+    &-22 {
+      line-height: 2.2;
+    } 
+  }
+}
+
+// letter-spacing
+.u-ls {
+  &-0 {
+    letter-spacing: 0!important;
+  }
+  &-5 {
+    letter-spacing: .05rem!important;
+  }
+  &-10 {
+    letter-spacing: .1rem!important;
+  }
+  &-15 {
+    letter-spacing: .15rem!important;
+  }
+  &-20 {
+    letter-spacing: .2rem!important;
+  }
+  &-25 {
+    letter-spacing: .25rem!important;
+  }
+}
+@include g.sp {
+  .s\:u-ls {
+    &-0 {
+      letter-spacing: 0!important;
+    }
+    &-10 {
+      letter-spacing: .1rem!important;
+    }
+    &-15 {
+      letter-spacing: .15rem!important;
+    }
+    &-20 {
+      letter-spacing: .2rem!important;
+    }
+  }
+}
+// font
+.u-font {
+  &-0 {
+    font-size: 0;
+  }
+  &-10 {
+    font-size: 1rem;
+  }
+  &-12 {
+    font-size: 1.2rem;
+  }
+  &-14 {
+    font-size: 1.4rem;
+  }
+  &-16 {
+    font-size: 1.6rem;
+  }
+  &-18 {
+    font-size: 1.8rem;
+  }
+  &-20 {
+    font-size: 2rem;
+  }
+  &-black {
+    color: var(--black);
+  }
+  &-red {
+    color: var(--red)!important;
+  }
+  &-blue {
+    color: var(--blue)!important;
+  }
+  &-white {
+    color: var(--white)!important;
+  }
+  &-green {
+    color: var(--green)!important;
+  }
+  &-orange {
+    color: var(--orange)!important;
+  }
+  &-normal {
+    font-weight: 400!important;
+  }
+  &-medium {
+    font-weight: 500!important;
+  }
+  &-semibold {
+    font-weight: 600!important;
+  }
+  &-bold {
+    font-weight: 700!important;
+  }
+  &-super-bold {
+    font-weight: 900!important;
+  }
+  &-underline {
+    text-decoration: underline;
+  }
+  &-family-1 {
+    font-family: g.$font_1!important;
+  }
+  &-family-2 {
+    font-family: g.$font_2!important;
+  }
+  &-family-3 {
+    font-family: g.$font_3!important;
+  }
+}
+
+@include g.sp {
+  .s\:u-font {
+    &-10 {
+      font-size: 1rem;
+    }
+    &-12 {
+      font-size: 1.2rem;
+    }
+    &-14 {
+      font-size: 1.4rem;
+    }
+    &-16 {
+      font-size: 1.6rem;
+    }
+    &-20 {
+      font-size: 2rem;
+    } 
+  }
+}
+
+// only device
+.u-only {
+  &-pc {
+    @include g.sp {
+      display: none!important;
+    }
+  }
+  &-sp {
+    @include g.pc {
+      display: none!important;
+    }
+  }
+}
+
+.u-hidden {
+  display: none;
+}
+.s\:u-hidden {
+  @include g.sp {
+    display: none;
+  }
+}
+
+
+// position
+.u-left-half {
+  left: 50%;
+}
+
+@include g.gen-style-loop(".u-bottom", "bottom", 0, 250, 5);
+@include g.gen-style-loop(".u-top", "top", 0, 140, 5);
+@include g.gen-style-loop(".u-left", "left", 0, 140, 5);
+@include g.gen-style-loop(".u-right", "right", 0, 140, 5);
+
+@include g.sp {
+  @include g.gen-style-loop(".s\\:u-bottom", "bottom", 0, 100, 5, 'sp');
+  @include g.gen-style-loop(".s\\:u-top", "top", 0, 100, 5, 'sp');
+  @include g.gen-style-loop(".s\\:u-left", "left", 0, 100, 5, 'sp');
+  @include g.gen-style-loop(".s\\:u-right", "right", 0, 100, 5, 'sp');
+
+}
+
+
+// block element
+.u-block {
+  display: block;
+}
+@include g.sp {
+  .s\:u-block {
+    display: block;
+  }
+}
+
+.u-nowrap {
+  white-space: nowrap;
+}
+
+@include g.gen-style-loop(".u-t", "top", 0, 30, 5);
+@include g.gen-style-loop(".u-b", "bottom", 0, 30, 5);
+@include g.sp {
+  @include g.gen-style-loop(".s\\:u-t", "top", 0, 20, 5, 'sp');
+  @include g.gen-style-loop(".s\\:u-b", "bottom", 0, 80, 5, 'sp');
+}
+
+// padding
+@include g.gen-style-loop(".u-p", "padding", 0, 30, 5);
+@include g.gen-style-loop(".u-pb", "padding-bottom", 0, 300, 5);
+@include g.gen-style-loop(".u-pt", "padding-top", 0, 260, 5);
+@include g.gen-style-loop(".u-pl", "padding-left", 0, 155, 5);
+@include g.gen-style-loop(".u-pr", "padding-right", 0, 155, 5);
+
+@include g.sp {
+  @include g.gen-style-loop(".s\\:u-pb", "padding-bottom", 0, 100, 5, 'sp');
+  @include g.gen-style-loop(".s\\:u-pt", "padding-top", 0, 100, 5, 'sp');
+  @include g.gen-style-loop(".s\\:u-pl", "padding-left", 0, 100, 5, 'sp');
+  @include g.gen-style-loop(".s\\:u-pr", "padding-right", 0, 100, 5, 'sp');
+}
+
+
+// margin
+.u-m-auto {
+  margin: 0 auto;
+}
+
+@include g.gen-style-loop(".u-mb", "margin-bottom", 0, 250, 5);
+@include g.gen-style-loop(".u-mt", "margin-top", 0, 140, 5);
+@include g.gen-style-loop(".u-ml", "margin-left", 0, 140, 5);
+@include g.gen-style-loop(".u-mr", "margin-right", 0, 140, 5);
+
+@include g.gen-style-loop(".u-mb-m", "margin-bottom", -100, 0, 5);
+@include g.gen-style-loop(".u-mt-m", "margin-top", -100, 0, 5);
+@include g.gen-style-loop(".u-ml-m", "margin-left", -100, 0, 5);
+@include g.gen-style-loop(".u-mr-m", "margin-right", -50, 0, 5);
+
+@include g.sp {
+  .s\:u-m-auto {
+    margin: 0 auto;
+  }
+  @include g.gen-style-loop(".s\\:u-mb", "margin-bottom", 0, 150, 5, 'sp');
+  @include g.gen-style-loop(".s\\:u-mt", "margin-top", 0, 100, 5, 'sp');
+  @include g.gen-style-loop(".s\\:u-ml", "margin-left", 0, 80, 5, 'sp');
+  @include g.gen-style-loop(".s\\:u-mr", "margin-right", 0, 80, 5, 'sp');
+
+  @include g.gen-style-loop(".s\\:u-mb-m", "margin-bottom", -100, 0, 5, 'sp');
+  @include g.gen-style-loop(".s\\:u-mt-m", "margin-top", -100, 0, 5, 'sp');
+  @include g.gen-style-loop(".s\\:u-ml-m", "margin-left", -100, 0, 5, 'sp');
+  @include g.gen-style-loop(".s\\:u-mr-m", "margin-right", -100, 0, 5, 'sp');
+}
+
+
+// width
+.u-w{
+  &-full-vw {
+    width: 100vw;
+  }
+  &-full {
+    width: 100%;
+  }
+  &-half {
+    width: 50%;
+  }
+}
+
+@include g.sp {
+  .s\:u-w {
+    &-full {
+      width: 100%;
+    }
+    &-auto {
+      width: auto;
+    }
+  }
+}
+
+.u-h {
+  &-full {
+    height: 100%;
+  }
+  &-half {
+    height: 50%;
+  }
+}
+
+@include g.sp {
+  .s\:u-h {
+    &-full {
+      height: 100%;
+    }
+    &-auto {
+      height: auto;
+    }
+  }
+}
+
+.u-z {
+  &-9999 {
+    z-index: 9999;
+  }
+}
+
+.u-mix-blend {
+  &-normal {
+    mix-blend-mode: normal;
+  }
+  &-multiply {
+    mix-blend-mode: multiply;
+  }
+}
+
+.u-opacity {
+  &-0 {
+    opacity: 0;
+  }
+  &-20 {
+    opacity: .2;
+  }
+  &-50 {
+    opacity: .5;
+  }
+  &-100 {
+    opacity: 1;
+  }
+}
+
+.u-palt {
+  font-feature-settings: "palt";
+}
+
+.u-hidden-txt {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap; /* 折り返し防止 */
+}

@@ -1,0 +1,167 @@
+//
+// import
+// -------------------------------- //
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho&display=swap');
+@import url('lib/ress.min.css');
+
+//
+// variables
+// -------------------------------- //
+
+
+// base width
+$design_w: 1366;
+$inner_w: 1110;
+$inner_padding: 123;
+$min_w: $inner_w + $inner_padding * 2;
+$sp_design_w: 390;
+$sp_inner_w: 350;
+$sp_inner_padding: 20;
+
+// breakpoint
+$breakpoint: 480, 767, $inner_w + $inner_padding * 2;
+
+// colors
+$black: #333;
+$blue: #0068B7;
+$dark-blue: #1E2C6B;
+$gray: #ccc;
+$green: #7AC430;
+$light-blue: #4098E2;
+$light-gray: #F5F5F2;
+$orange: #F99123;
+$red: #FF1818;
+$yellow: #F39A00;
+$white: #fff;
+
+// font family
+$font_1: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
+$font_2: "Shippori Mincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", "Yu Mincho", "MS 明朝", "MS Mincho", serif;
+$font_3: $font_1;
+$font_4: $font_1;
+
+// svg
+$svg: 'data:image/svg+xml;utf8,';
+
+
+@mixin icon {
+  background-color: var(--black);
+  content: " ";
+  display: inline-block;
+  height: auto;
+  line-height: 0;
+  mask-repeat: no-repeat;
+  mask-size: 100% auto;
+}
+
+
+//
+// functions
+// -------------------------------- //
+
+// px to rem
+@function p2rem($px) {
+  @return calc($px / 16) * 1rem;
+}
+
+// px to per
+@function p2per_inner($px) {
+  @return calc($px / $inner_w) * 100%;
+}
+
+//
+// mixins
+// -------------------------------- //
+
+// mediaquery
+@mixin pc {
+  @media screen and (min-width: calc((nth($breakpoint, 2) + 1) * 1px)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media screen and (min-width: calc((nth($breakpoint, 1) + 1) * 1px)) and (max-width: calc((nth($breakpoint, 2)) * 1px)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media screen and (max-width: calc((nth($breakpoint, 2)) * 1px)) {
+    @content;
+  }
+}
+@mixin mq_under($px) {
+  @media screen and (max-width: calc($px * 1px)) {
+    @content;
+  }
+}
+@mixin mq_over($px) {
+  @media screen and (min-width: calc(($px) * 1px)) {
+    @content;
+  }
+}
+@mixin aspect($over_or_under, $aspect-ratio:'1/1') {
+  $minmax: 'max';
+    @if ($over_or_under == 'over') {
+      $minmax: 'min';
+    }
+  @media (#{$minmax + '-' + aspect-ratio}: $aspect-ratio) {
+    @content;
+  }
+}
+@mixin landscape() {
+  @include aspect('over', '1/1') {
+    @content;
+  }
+}
+
+@mixin portrait() {
+  @include aspect('under', '1/1') {
+    @content;
+  }
+}
+
+// loop
+@mixin gen-style-loop($className, $styleName, $min, $max, $int, $layout: 'pc') {
+  @for $i from $min through $max {
+    @if $i % $int == 0 {
+      $numValue: $i;
+      @if($i < 0) {
+        $numValue: $i * -1;
+      }
+      #{$className + '-' + $numValue} {
+        #{$styleName}: $i * .1rem!important;
+      }
+    }
+  }
+}
+
+ // triangle 三角つくる
+ // @param  $dir    方向 up,down,left,right
+ // @param  $base   底辺
+ // @param  $height 高さ
+ // @param  $color  色
+ 
+ @mixin triangle($dir, $base, $height, $color){
+  @if $dir == up{
+    border-left: calc($base/2) solid transparent;
+    border-right: calc($base/2) solid transparent;
+    border-bottom: calc($height) solid $color;
+  }@else if $dir == down{
+    border-left: calc($base/2) solid transparent;
+    border-right: calc($base/2) solid transparent;
+    border-top: calc($height) solid $color;
+  }@else if $dir == left{
+    border-top: calc($base/2) solid transparent;
+    border-bottom: calc($base/2) solid transparent;
+    border-right: calc($height) solid $color;
+  }@else if $dir == right{
+    border-top: calc($base/2) solid transparent;
+    border-bottom: calc($base/2) solid transparent;
+    border-left: calc($height) solid $color;
+  }  
+}
+
+@mixin marker($transparent_per, $color_per, $color) {
+  background: linear-gradient(transparent $transparent_per, $color $color_per);
+  width: fit-content;
+}

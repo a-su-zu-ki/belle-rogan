@@ -1,0 +1,84 @@
+@use '_global' as g;
+
+:root {
+  --black: #{g.$black};
+  --white: #{g.$white};
+  --blue: #{g.$blue};
+  --light-blue: #{g.$light_blue};
+  --orange: #{g.$orange};
+  --green: #{g.$green};
+  --red: #{g.$red};
+  --font-1: #{g.$font_1};
+  --font-2: #{g.$font_2};
+}
+
+html {
+  font-size: calc(100vw * 10 / 1366);   // ※ 853px で 10px
+  @include g.sp {
+    font-size: calc(100vw * 10 / 390);
+  }
+}
+
+
+body {
+  color: var(--black);
+  font-size: max(10px, 1.6rem);
+  font-family: var(--font-1);
+  font-weight: 400;
+  line-height: calc(26 / 16);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  @include g.sp {
+    font-size: 1.4rem;
+    letter-spacing: .07rem;
+    line-height: calc(22 / 14);
+  }
+}
+* {
+  position: relative;
+  z-index: 1;
+}
+$hover-transition: .2s ease;
+a {
+  color: g.$black;
+  text-decoration: none;
+  transition: color $hover-transition, background-color $hover-transition;
+  &:hover {
+    opacity: .6;
+  }
+}
+button {
+  &:hover {
+    opacity: .8;
+  }
+}
+p + p {
+  padding-top: 1.8rem;
+  @include g.sp {
+    padding-top: 1.5rem;
+  }
+}
+li {
+  list-style-type: none;
+}
+
+img,
+svg {
+  vertical-align: middle;
+  image-rendering: auto;
+  width: 100%;
+  -ms-interpolation-mode: nearest-neighbor;
+  -webkit-backface-visibility: hidden;
+}
+
+:focus-visible {
+  outline: 2px solid g.$gray!important;
+  opacity: .8;
+}
+
+a[href^="tel:"] {
+  @include g.pc {
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,148 @@
+@use 'core/global' as g;
+@use 'core/base';
+@use 'core/component';
+@use 'core/utility';
+@use 'core/layout';
+@use 'core/js';
+
+@import url('lib/slick.css');
+
+.p-mv {
+  height: min(100vh, 76.8rem);
+  width: 100%;
+  .ttl {
+    bottom: 4.67rem;
+    left: calc(50% - 61rem);
+    position: absolute;
+    width: 36.126rem;
+  }
+  img {
+    height: 100%;
+    object-position: top center;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.p-intro {
+  display: flex;
+  padding: 13.1rem 0 0;
+  z-index: 2;
+  .u-flex {
+    justify-content: space-between;
+    margin-right: calc(50% - 50vw);
+    width: calc(100% + 12.3rem)!important;
+  }
+  &-txt {
+    width: 60.4rem;
+    .ttl {
+      font-family: var(--font-2);
+      font-size: 5rem;
+      font-weight: 500;
+      margin: 0 0 2.8rem -1rem;
+    }
+    .txt {
+      line-height: calc(40 / 16);
+    }
+  }
+  &-img {
+    padding: 4rem 0 0;
+    width: 58.729rem;
+    .logo {
+      bottom: -13rem;
+      left: -16.5rem;
+      position: absolute;
+      width: 49.6rem;
+    }
+  }
+}
+
+.p-item {
+  &-img {
+    margin-left: calc(50% - 50vw);
+    width: calc(100% + 12.3rem);
+  }
+  &-head {
+    align-items: end;
+    display: flex;
+    padding: 1.4rem 0 0;
+    .ttl {
+      align-items: end;
+      display: flex;
+      font-size: 3rem;
+      font-weight: 500; 
+      line-height: 1.2;
+      b {
+        font-weight: 700;
+        padding: 0 1.3rem 0 0;
+      }
+      &:after {
+        background: var(--black);
+        content: " ";
+        display: inline-block;
+        height: 2.9rem;
+        margin: 0 2.6rem 0 2.5rem;
+        transform: translateY(-.3rem);
+        width: 1px;
+      }
+    }
+    .value {
+      align-items: end;
+      display: flex;
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 1.2;
+      transform: translateY(-.5rem);
+      &-num {
+        display: inline-block;
+        font-family: var(--font-2);
+        font-size: 6rem;
+        font-weight: 500;
+        padding: 0 0 0 1.8rem;
+        transform: scaleX(1.05) translateY(.8rem);
+      }
+      &-yen {
+        font-size: 2.5rem;
+        padding: 0 0 0 1rem;
+      }
+      small {
+        font-size: 1.4rem;
+        font-weight: 400;
+        padding: 0 0 0 .7rem;
+        transform: translateY(-.3rem);
+      }
+    }
+  }
+  &-body {
+    display: flex;
+    justify-content: space-between;
+    padding: 10rem 0 0;
+    .slide {
+      width: 53.8rem;
+      &-item {
+        width: 53.8rem;
+        figcaption {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          gap: .2rem;
+          padding: 7.8rem 0 0;
+          small {
+            font-size: 1.6rem;
+            color: #969696;
+          }
+        }
+      }
+    }
+    .content {
+      width: 49.6rem;
+    }
+  }
+  &-foot {
+    padding: 8rem 0 0;
+  }
+  &-1 {
+    @extend .p-item;
+    padding: 16.2rem 0 0;
+  }
+}

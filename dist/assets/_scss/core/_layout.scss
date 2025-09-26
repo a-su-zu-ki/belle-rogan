@@ -1,0 +1,11 @@
+@use '_global' as g;
+
+.l-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  overflow: hidden;
+  width: 100vw;
+}
+

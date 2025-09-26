@@ -1,0 +1,16 @@
+@use '_global' as g;
+
+/* override */
+
+
+
+/* components */
+
+.c-inner {
+  margin: 0 auto;
+  width: 112rem;
+  @include g.sp {
+    width: 35rem;
+  }
+}
+

@@ -1,0 +1,12 @@
+{
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "~/../css"
+    }
+  ],
+  "github.copilot.enable": {
+    "*": false // デフォルトですべての言語を無効化
+  }
+}
