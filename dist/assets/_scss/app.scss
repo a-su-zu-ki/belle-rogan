@@ -10,11 +10,19 @@
 .p-mv {
   height: min(100vh, 76.8rem);
   width: 100%;
+  @include g.sp {
+    height: unset;
+  }
   .ttl {
     bottom: 4.67rem;
     left: calc(50% - 61rem);
     position: absolute;
     width: 36.126rem;
+    @include g.sp {
+      bottom: .6rem;
+      left: -1rem;
+      width: 28.5rem;
+    }
   }
   img {
     height: 100%;
@@ -28,59 +36,103 @@
   display: flex;
   padding: 13.1rem 0 0;
   z-index: 2;
+  @include g.sp {
+    flex-direction: column;
+    padding: 7rem 0 0;
+  }
   .u-flex {
     justify-content: space-between;
     margin-right: calc(50% - 50vw);
     width: calc(100% + 12.3rem)!important;
+    @include g.sp {
+      flex-direction: column;
+      margin: 0;
+      width: 100%!important;
+    }
   }
   &-txt {
     width: 60.4rem;
+    @include g.sp {
+      width: 100%;
+    }
     .ttl {
       font-family: var(--font-2);
       font-size: 5rem;
       font-weight: 500;
       margin: 0 0 2.8rem -1rem;
+      @include g.sp {
+        font-size: 3.7rem;
+        letter-spacing: -.02rem;
+        margin: 0 0 2.3rem 0;
+        white-space: nowrap;
+      }
     }
-    // .txt {
-    //   line-height: calc(40 / 16);
-    // }
   }
   &-img {
     padding: 4rem 0 0;
     width: 58.729rem;
+    @include g.sp {
+      margin-right: -2rem;
+      padding: 3.3rem 0 0;
+      width: calc(100% + 2rem);
+    }
     .logo {
       bottom: -13rem;
       left: -16.5rem;
       position: absolute;
       width: 49.6rem;
+      @include g.sp {
+        bottom: -6.6rem;
+        left: .5rem;
+        width: 31.5rem;
+      }
     }
   }
 }
 
-.p-items {
-  display: flex;
-  flex-direction: column;
-  gap: 13rem;
-}
+// .p-items {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 13rem;
+// }
 
 .p-item {
   &-img {
+    display: block;
     margin-left: calc(50% - 50vw);
     width: calc(100% + 12.3rem);
+    @include g.sp {
+      margin: 0 calc(50% - 50vw);
+      width: 100vw;
+    }
   }
   &-head {
     align-items: end;
     display: flex;
     padding: 1.4rem 0 0;
+    @include g.sp {
+      align-items: unset;
+      flex-direction: column;
+    }
     .ttl {
       align-items: end;
       display: flex;
       font-size: 3rem;
       font-weight: 500; 
       line-height: 1.2;
+      @include g.sp {
+        align-items: unset;
+        border-bottom: 1px solid var(--black);
+        font-size: 1.8rem;
+        justify-content: center;
+        padding: .9rem 0 1.8rem;
+      }
       b {
         font-weight: 700;
         padding: 0 1.3rem 0 0;
+        @include g.sp {
+          padding: 0 .8rem 0 0;
+        }
       }
       &:after {
         background: var(--black);
@@ -90,6 +142,9 @@
         margin: 0 2.6rem 0 2.5rem;
         transform: translateY(-.3rem);
         width: 1px;
+        @include g.sp {
+          display: none;
+        }
       }
     }
     .value {
@@ -99,6 +154,11 @@
       font-size: 2rem;
       line-height: 1.2;
       transform: translateY(-.5rem);
+      @include g.sp {
+        font-size: 1.6rem;
+        justify-content: center;
+        transform: translateY(-.3rem);
+      }
       &-num {
         display: inline-block;
         font-family: var(--font-2);
@@ -106,16 +166,32 @@
         font-weight: 500;
         padding: 0 0 0 1.8rem;
         transform: scaleX(1.05) translateY(.8rem);
+        @include g.sp {
+          font-size: 4rem;
+          padding: 0 0 0 1rem;
+        }
       }
       &-yen {
         font-size: 2.5rem;
         padding: 0 0 0 1rem;
+        @include g.sp {
+          font-size: 2rem;
+          padding: 0 0 0 .5rem;
+          transform: translateY(.3rem);
+        }
       }
       small {
         font-size: 1.4rem;
         font-weight: 400;
         padding: 0 0 0 .7rem;
         transform: translateY(-.3rem);
+        @include g.sp {
+          bottom: -2.5rem;
+          font-size: 1.4rem;
+          position: absolute;
+          right: 3rem;
+          transform: unset;
+        }
       }
     }
   }
@@ -124,9 +200,16 @@
     display: flex;
     justify-content: space-between;
     padding: 10rem 0 0;
+    @include g.sp {
+      display: block;
+      padding: 7.2rem 0 0;
+    }
     .slide {
       flex-shrink: 0;
       width: 53.8rem;
+      @include g.sp {
+        width: 100%;
+      }
       &-items {
         width: 100%;
       }
@@ -135,6 +218,9 @@
         position: absolute!important;
         top: 0;
         width: 53.8rem;
+        @include g.sp {
+          width: 35rem;
+        }
         &:first-child {
           position: relative!important;
         }
@@ -144,6 +230,9 @@
           flex-direction: column;
           gap: .2rem;
           padding: 7.8rem 0 0;
+          @include g.sp {
+            padding: 5.8rem 0 0;
+          }
           small {
             font-size: 1.6rem;
             color: #969696;
@@ -175,6 +264,9 @@
           gap: 2rem;
           position: absolute;
           width: 100%;
+          @include g.sp {
+            bottom: 6.6rem;
+          }
           button {
             aspect-ratio: 1 / 1;
             background-color: var(--black);
@@ -193,6 +285,11 @@
       flex-shrink: 0;
       padding: .5rem 0 0;
       width: 49.6rem;
+      @include g.sp {
+        height: unset;
+        padding: 3.7rem 0 0;
+        width: 100%;
+      }
       &-ttl {
         border-bottom: 1px solid var(--black);
         font-family: var(--font-2);
@@ -200,6 +297,10 @@
         font-weight: 500;
         margin: 0 0 3.5rem;
         padding: 0 0 2.7rem;
+        @include g.sp {
+          font-size: 2.8rem;
+          margin: 0 0 2.4rem;
+        }
       }
       &-subttl {
         font-family: var(--font-2);
@@ -208,17 +309,27 @@
         line-height: calc(45 / 25);
         margin: 0 0 1.7rem;
         white-space: nowrap;
+        @include g.sp {
+          font-size: 2rem;
+          margin: 0 0 1rem;
+        }
       }
     }
   }
   &-foot {
     padding: 8rem 0 0;
+    @include g.sp {
+      padding: 3.3rem 0 0;
+    }
     .gallery {
       margin: 0 calc(50% - 50vw);
       width: 100vw;
       &-item {
         margin: 0 1rem;
         width: 58.7rem;
+        @include g.sp {
+          width: 24.4rem;
+        }
         figcaption {
           font-family: var(--font-2);
           font-weight: 500;
@@ -228,23 +339,45 @@
     }
   }
   &-1 {
-    @extend .p-item;
+    margin-bottom: 1.3rem;
     padding: 16.2rem 0 0;
+    @include g.sp {
+      margin-bottom: 6.8rem;
+      padding: 9.5rem 0 0;
+    }
   }
 }
 
 .p-overview {
   padding: 12.8rem 0 12.8rem;
+  @include g.sp {
+    padding: 8rem 0 5rem;
+  }
   &-head {
     display: flex;
     justify-content: space-between;
     padding: 0 0 7.5rem;
+    @include g.sp {
+      flex-direction: column;
+      padding: 0 0 2rem;
+    }
     .c-ttl-1 {
       transform: translateY(-.2rem);
     }
     .txt {
       flex-shrink: 0;
       width: 66.7rem;
+      @include g.sp {
+        padding: 2.4rem 0 0;
+        width: unset;
+      }
+    }
+  }
+  &-body {
+    display: block;
+    @include g.sp {
+      margin: 0 calc(50% - 50vw);
+      width: 100vw;
     }
   }
 }
@@ -252,17 +385,32 @@
 .p-lens {
   border-top: 1px solid var(--black);
   padding: 9.5rem 0 0;
+  @include g.sp {
+    padding: 6rem 0 0;
+  }
   &-head {
     text-align: center;
+    @include g.sp {
+      text-align: left;
+    }
     .txt {
       padding: 1.8rem 0 0;
+      @include g.sp {
+        padding: 1.3rem 0 0;
+      }
     }
   }
   &-body {
     padding: 4.2rem 0 0;
     text-align: center;
+    @include g.sp {
+      padding: 2.5rem 0 0;
+    }
     img {
       width: 82.7rem;
+      @include g.sp {
+        width: 100%;
+      }
     }
   }
 }
@@ -270,8 +418,15 @@
 .p-message {
   padding: 4.5rem 0 9.2rem;
   text-align: center;
+  @include g.sp {
+    padding: 4.2rem 0 4rem;
+    text-align: left;
+  }
   .txt {
     padding: 1.8rem 0 0;
+    @include g.sp {
+      padding: 1.5rem 0 0;
+    }
   }
 }
 
@@ -280,20 +435,38 @@
   margin: 0 calc(50% - 50vw);
   padding: .7rem 0 0;
   width: 100vw;
+  @include g.sp {
+    padding: 2rem;
+    margin: 0 auto;
+    width: 35rem;
+  }
   .u-flex {
     align-items: center;
     justify-content: space-between;
+    @include g.sp {
+      flex-direction: column-reverse;
+    }
   }
   &-img {
     flex-shrink: 0;
     transform: translateY(.2rem);
     width: 54.221rem;
+    @include g.sp {
+      margin: 0 -2rem;
+      width: calc(100% + 4rem);
+    }
   }
   &-txt {
     background: var(--white);
     flex-shrink: 0;
     padding: 4.6rem 12.3rem 6rem 6rem;
     width: 81.5rem;
+    @include g.sp {
+      padding: 0 1rem;
+      margin: 0 auto;
+      // width: 31rem;
+      width: 100%;
+    }
     .ttl {
       font-size: 3rem;
       font-weight: 700;

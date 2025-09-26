@@ -19,4 +19,8 @@
   font-size: 3.5rem;
   font-weight: 500;
   line-height: calc(60 / 35);
+  @include g.sp {
+    font-size: 3rem;
+    line-height: calc(43 / 30);
+  }
 }

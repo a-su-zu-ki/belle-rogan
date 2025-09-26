@@ -35,8 +35,7 @@ body {
 }
 @media screen and (max-width: 767px) {
   body {
-    font-size: 1.4rem;
-    letter-spacing: 0.07rem;
+    font-size: 1.6rem;
     line-height: 1.5714285714;
   }
 }
@@ -61,6 +60,11 @@ button:hover {
 
 p {
   line-height: 2.5;
+}
+@media screen and (max-width: 767px) {
+  p {
+    line-height: 2.1875;
+  }
 }
 p + p {
   padding-top: 1.8rem;
@@ -112,6 +116,12 @@ svg {
   font-size: 3.5rem;
   font-weight: 500;
   line-height: 1.7142857143;
+}
+@media screen and (max-width: 767px) {
+  .c-ttl-1 {
+    font-size: 3rem;
+    line-height: 1.4333333333;
+  }
 }
 
 .u-overflow-hidden {
@@ -3969,7 +3979,7 @@ svg {
   justify-content: space-between;
   min-height: 100%;
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
 }
 
 [data-js-fadeinup],
@@ -4046,11 +4056,23 @@ svg {
   height: min(100vh, 76.8rem);
   width: 100%;
 }
+@media screen and (max-width: 767px) {
+  .p-mv {
+    height: unset;
+  }
+}
 .p-mv .ttl {
   bottom: 4.67rem;
   left: calc(50% - 61rem);
   position: absolute;
   width: 36.126rem;
+}
+@media screen and (max-width: 767px) {
+  .p-mv .ttl {
+    bottom: 0.6rem;
+    left: -1rem;
+    width: 28.5rem;
+  }
 }
 .p-mv img {
   height: 100%;
@@ -4064,13 +4086,31 @@ svg {
   padding: 13.1rem 0 0;
   z-index: 2;
 }
+@media screen and (max-width: 767px) {
+  .p-intro {
+    flex-direction: column;
+    padding: 7rem 0 0;
+  }
+}
 .p-intro .u-flex {
   justify-content: space-between;
   margin-right: calc(50% - 50vw);
   width: calc(100% + 12.3rem) !important;
 }
+@media screen and (max-width: 767px) {
+  .p-intro .u-flex {
+    flex-direction: column;
+    margin: 0;
+    width: 100% !important;
+  }
+}
 .p-intro-txt {
   width: 60.4rem;
+}
+@media screen and (max-width: 767px) {
+  .p-intro-txt {
+    width: 100%;
+  }
 }
 .p-intro-txt .ttl {
   font-family: var(--font-2);
@@ -4078,9 +4118,24 @@ svg {
   font-weight: 500;
   margin: 0 0 2.8rem -1rem;
 }
+@media screen and (max-width: 767px) {
+  .p-intro-txt .ttl {
+    font-size: 3.7rem;
+    letter-spacing: -0.02rem;
+    margin: 0 0 2.3rem 0;
+    white-space: nowrap;
+  }
+}
 .p-intro-img {
   padding: 4rem 0 0;
   width: 58.729rem;
+}
+@media screen and (max-width: 767px) {
+  .p-intro-img {
+    margin-right: -2rem;
+    padding: 3.3rem 0 0;
+    width: calc(100% + 2rem);
+  }
 }
 .p-intro-img .logo {
   bottom: -13rem;
@@ -4088,21 +4143,35 @@ svg {
   position: absolute;
   width: 49.6rem;
 }
-
-.p-items {
-  display: flex;
-  flex-direction: column;
-  gap: 13rem;
+@media screen and (max-width: 767px) {
+  .p-intro-img .logo {
+    bottom: -6.6rem;
+    left: 0.5rem;
+    width: 31.5rem;
+  }
 }
 
 .p-item-img {
+  display: block;
   margin-left: calc(50% - 50vw);
   width: calc(100% + 12.3rem);
+}
+@media screen and (max-width: 767px) {
+  .p-item-img {
+    margin: 0 calc(50% - 50vw);
+    width: 100vw;
+  }
 }
 .p-item-head {
   align-items: end;
   display: flex;
   padding: 1.4rem 0 0;
+}
+@media screen and (max-width: 767px) {
+  .p-item-head {
+    align-items: unset;
+    flex-direction: column;
+  }
 }
 .p-item-head .ttl {
   align-items: end;
@@ -4111,9 +4180,23 @@ svg {
   font-weight: 500;
   line-height: 1.2;
 }
+@media screen and (max-width: 767px) {
+  .p-item-head .ttl {
+    align-items: unset;
+    border-bottom: 1px solid var(--black);
+    font-size: 1.8rem;
+    justify-content: center;
+    padding: 0.9rem 0 1.8rem;
+  }
+}
 .p-item-head .ttl b {
   font-weight: 700;
   padding: 0 1.3rem 0 0;
+}
+@media screen and (max-width: 767px) {
+  .p-item-head .ttl b {
+    padding: 0 0.8rem 0 0;
+  }
 }
 .p-item-head .ttl:after {
   background: var(--black);
@@ -4124,6 +4207,11 @@ svg {
   transform: translateY(-0.3rem);
   width: 1px;
 }
+@media screen and (max-width: 767px) {
+  .p-item-head .ttl:after {
+    display: none;
+  }
+}
 .p-item-head .value {
   align-items: end;
   display: flex;
@@ -4131,6 +4219,13 @@ svg {
   font-size: 2rem;
   line-height: 1.2;
   transform: translateY(-0.5rem);
+}
+@media screen and (max-width: 767px) {
+  .p-item-head .value {
+    font-size: 1.6rem;
+    justify-content: center;
+    transform: translateY(-0.3rem);
+  }
 }
 .p-item-head .value-num {
   display: inline-block;
@@ -4140,9 +4235,22 @@ svg {
   padding: 0 0 0 1.8rem;
   transform: scaleX(1.05) translateY(0.8rem);
 }
+@media screen and (max-width: 767px) {
+  .p-item-head .value-num {
+    font-size: 4rem;
+    padding: 0 0 0 1rem;
+  }
+}
 .p-item-head .value-yen {
   font-size: 2.5rem;
   padding: 0 0 0 1rem;
+}
+@media screen and (max-width: 767px) {
+  .p-item-head .value-yen {
+    font-size: 2rem;
+    padding: 0 0 0 0.5rem;
+    transform: translateY(0.3rem);
+  }
 }
 .p-item-head .value small {
   font-size: 1.4rem;
@@ -4150,15 +4258,35 @@ svg {
   padding: 0 0 0 0.7rem;
   transform: translateY(-0.3rem);
 }
+@media screen and (max-width: 767px) {
+  .p-item-head .value small {
+    bottom: -2.5rem;
+    font-size: 1.4rem;
+    position: absolute;
+    right: 3rem;
+    transform: unset;
+  }
+}
 .p-item-body {
   align-items: start;
   display: flex;
   justify-content: space-between;
   padding: 10rem 0 0;
 }
+@media screen and (max-width: 767px) {
+  .p-item-body {
+    display: block;
+    padding: 7.2rem 0 0;
+  }
+}
 .p-item-body .slide {
   flex-shrink: 0;
   width: 53.8rem;
+}
+@media screen and (max-width: 767px) {
+  .p-item-body .slide {
+    width: 100%;
+  }
 }
 .p-item-body .slide-items {
   width: 100%;
@@ -4169,6 +4297,11 @@ svg {
   top: 0;
   width: 53.8rem;
 }
+@media screen and (max-width: 767px) {
+  .p-item-body .slide-item {
+    width: 35rem;
+  }
+}
 .p-item-body .slide-item:first-child {
   position: relative !important;
 }
@@ -4178,6 +4311,11 @@ svg {
   flex-direction: column;
   gap: 0.2rem;
   padding: 7.8rem 0 0;
+}
+@media screen and (max-width: 767px) {
+  .p-item-body .slide-item figcaption {
+    padding: 5.8rem 0 0;
+  }
 }
 .p-item-body .slide-item figcaption small {
   font-size: 1.6rem;
@@ -4208,6 +4346,11 @@ svg {
   position: absolute;
   width: 100%;
 }
+@media screen and (max-width: 767px) {
+  .p-item-body .slide .slick-dots {
+    bottom: 6.6rem;
+  }
+}
 .p-item-body .slide .slick-dots button {
   aspect-ratio: 1/1;
   background-color: var(--black);
@@ -4224,6 +4367,13 @@ svg {
   padding: 0.5rem 0 0;
   width: 49.6rem;
 }
+@media screen and (max-width: 767px) {
+  .p-item-body .content {
+    height: unset;
+    padding: 3.7rem 0 0;
+    width: 100%;
+  }
+}
 .p-item-body .content-ttl {
   border-bottom: 1px solid var(--black);
   font-family: var(--font-2);
@@ -4231,6 +4381,12 @@ svg {
   font-weight: 500;
   margin: 0 0 3.5rem;
   padding: 0 0 2.7rem;
+}
+@media screen and (max-width: 767px) {
+  .p-item-body .content-ttl {
+    font-size: 2.8rem;
+    margin: 0 0 2.4rem;
+  }
 }
 .p-item-body .content-subttl {
   font-family: var(--font-2);
@@ -4240,8 +4396,19 @@ svg {
   margin: 0 0 1.7rem;
   white-space: nowrap;
 }
+@media screen and (max-width: 767px) {
+  .p-item-body .content-subttl {
+    font-size: 2rem;
+    margin: 0 0 1rem;
+  }
+}
 .p-item-foot {
   padding: 8rem 0 0;
+}
+@media screen and (max-width: 767px) {
+  .p-item-foot {
+    padding: 3.3rem 0 0;
+  }
 }
 .p-item-foot .gallery {
   margin: 0 calc(50% - 50vw);
@@ -4251,22 +4418,45 @@ svg {
   margin: 0 1rem;
   width: 58.7rem;
 }
+@media screen and (max-width: 767px) {
+  .p-item-foot .gallery-item {
+    width: 24.4rem;
+  }
+}
 .p-item-foot .gallery-item figcaption {
   font-family: var(--font-2);
   font-weight: 500;
   padding: 1.5rem 0 0;
 }
 .p-item-1 {
+  margin-bottom: 1.3rem;
   padding: 16.2rem 0 0;
+}
+@media screen and (max-width: 767px) {
+  .p-item-1 {
+    margin-bottom: 6.8rem;
+    padding: 9.5rem 0 0;
+  }
 }
 
 .p-overview {
   padding: 12.8rem 0 12.8rem;
 }
+@media screen and (max-width: 767px) {
+  .p-overview {
+    padding: 8rem 0 5rem;
+  }
+}
 .p-overview-head {
   display: flex;
   justify-content: space-between;
   padding: 0 0 7.5rem;
+}
+@media screen and (max-width: 767px) {
+  .p-overview-head {
+    flex-direction: column;
+    padding: 0 0 2rem;
+  }
 }
 .p-overview-head .c-ttl-1 {
   transform: translateY(-0.2rem);
@@ -4275,31 +4465,82 @@ svg {
   flex-shrink: 0;
   width: 66.7rem;
 }
+@media screen and (max-width: 767px) {
+  .p-overview-head .txt {
+    padding: 2.4rem 0 0;
+    width: unset;
+  }
+}
+.p-overview-body {
+  display: block;
+}
+@media screen and (max-width: 767px) {
+  .p-overview-body {
+    margin: 0 calc(50% - 50vw);
+    width: 100vw;
+  }
+}
 
 .p-lens {
   border-top: 1px solid var(--black);
   padding: 9.5rem 0 0;
 }
+@media screen and (max-width: 767px) {
+  .p-lens {
+    padding: 6rem 0 0;
+  }
+}
 .p-lens-head {
   text-align: center;
 }
+@media screen and (max-width: 767px) {
+  .p-lens-head {
+    text-align: left;
+  }
+}
 .p-lens-head .txt {
   padding: 1.8rem 0 0;
+}
+@media screen and (max-width: 767px) {
+  .p-lens-head .txt {
+    padding: 1.3rem 0 0;
+  }
 }
 .p-lens-body {
   padding: 4.2rem 0 0;
   text-align: center;
 }
+@media screen and (max-width: 767px) {
+  .p-lens-body {
+    padding: 2.5rem 0 0;
+  }
+}
 .p-lens-body img {
   width: 82.7rem;
+}
+@media screen and (max-width: 767px) {
+  .p-lens-body img {
+    width: 100%;
+  }
 }
 
 .p-message {
   padding: 4.5rem 0 9.2rem;
   text-align: center;
 }
+@media screen and (max-width: 767px) {
+  .p-message {
+    padding: 4.2rem 0 4rem;
+    text-align: left;
+  }
+}
 .p-message .txt {
   padding: 1.8rem 0 0;
+}
+@media screen and (max-width: 767px) {
+  .p-message .txt {
+    padding: 1.5rem 0 0;
+  }
 }
 
 .p-hearing {
@@ -4308,20 +4549,45 @@ svg {
   padding: 0.7rem 0 0;
   width: 100vw;
 }
+@media screen and (max-width: 767px) {
+  .p-hearing {
+    padding: 2rem;
+    margin: 0 auto;
+    width: 35rem;
+  }
+}
 .p-hearing .u-flex {
   align-items: center;
   justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  .p-hearing .u-flex {
+    flex-direction: column-reverse;
+  }
 }
 .p-hearing-img {
   flex-shrink: 0;
   transform: translateY(0.2rem);
   width: 54.221rem;
 }
+@media screen and (max-width: 767px) {
+  .p-hearing-img {
+    margin: 0 -2rem;
+    width: calc(100% + 4rem);
+  }
+}
 .p-hearing-txt {
   background: var(--white);
   flex-shrink: 0;
   padding: 4.6rem 12.3rem 6rem 6rem;
   width: 81.5rem;
+}
+@media screen and (max-width: 767px) {
+  .p-hearing-txt {
+    padding: 0 1rem;
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 .p-hearing-txt .ttl {
   font-size: 3rem;
