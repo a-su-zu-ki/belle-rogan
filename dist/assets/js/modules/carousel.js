@@ -16,8 +16,8 @@ export class Carousel {
     this.container = _container ? _container : document.querySelector(_container);
     this.args = $.extend({
       arrows: true,
-      prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button"><i class="c-circle-arrow-white is-flip"></i></button>',
-      nextArrow: '<button class="slick-next slick-arrow" aria-label="Next" type="button"><i class="c-circle-arrow-white"></i></button>',
+      prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button"><span class="u-hidden-txt">PREV</span></button>',
+      nextArrow: '<button class="slick-next slick-arrow" aria-label="Next" type="button"><span class="u-hidden-txt">NEXT</span></button>',
       pauseOnFocus: false,
       pauseOnHover: false,
       slidesToShow: 1,
@@ -27,8 +27,8 @@ export class Carousel {
     }, _args);
     this.sp_args = $.extend({
       arrows: true,
-      prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button"><i class="c-circle-arrow-white is-flip"></i></button>',
-      nextArrow: '<button class="slick-next slick-arrow" aria-label="Next" type="button"><i class="c-circle-arrow-white"></i></button>',
+      prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button"><span class="u-hidden-txt">PREV</span></button>',
+      nextArrow: '<button class="slick-next slick-arrow" aria-label="Next" type="button"><span class="u-hidden-txt">NEXT</span></button>',
       pauseOnFocus: false,
       pauseOnHover: false,
       slidesToShow: 1,

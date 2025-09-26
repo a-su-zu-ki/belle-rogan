@@ -53,10 +53,13 @@ button {
     opacity: .8;
   }
 }
-p + p {
-  padding-top: 1.8rem;
-  @include g.sp {
-    padding-top: 1.5rem;
+p {
+  line-height: calc(40 / 16);
+  & + p {
+    padding-top: 1.8rem;
+    @include g.sp {
+      padding-top: 1.5rem;
+    }
   }
 }
 li {
